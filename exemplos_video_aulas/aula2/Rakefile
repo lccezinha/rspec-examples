@@ -1,0 +1,13 @@
+#carrega a task 
+#rake -T : todas as tasks
+#rake spec
+require 'rspec/core/rake_task'
+RSpec::Core::RakeTask.new
+
+=begin
+  
+RSpec::Core::RakeTask.new do |t|
+  t.configuracoes...
+end
+
+=end

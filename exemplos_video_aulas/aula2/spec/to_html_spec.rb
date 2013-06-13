@@ -41,21 +41,24 @@ shared_examples_for "html renderer" do
 
   it "generates html" do 
     tag_name = described_class.name.downcase
-    text = example.metadata[:text30]
+    text = example.metadata[:text]
     expect(renderer.to_html).to eql("[#{tag_name}]#{text}[/#{tag_name}]")
   end
 
 end
 
-describe MarkDown, :text => "markdown" do
+describe MarkDown do
   #usando exemplo compartilhado
+  let(:text) { 'markdown' }
   it_behaves_like "html renderer"  
 end
 
-describe Textile, :text => "textile" do 
+describe Textile do 
+  let(:text) { 'textile' }
   it_behaves_like "html renderer"  
 end
 
-describe BBCOde, :text => "bbcode" do 
+describe BBCOde do 
+  let(:text) { 'bbcode' }
   it_behaves_like "html renderer"  
 end
