@@ -60,4 +60,29 @@ describe "Matchers" do
     expect(1..10).to include(5) #gera só o item
   end  
 
+  it "starts with" do
+    expect('hello').to start_with('he')
+    expect([1, 2, 3]).to start_with([1, 2])
+  end
+
+  it "regexp" do 
+    expect('hello').to match (/\Ahel/)
+  end
+
+  it "yiels" do
+    mylib = Class.new do 
+      def self.configure
+        yield self
+      end
+    end
+
+    expect { |block| mylib.configure(&block) }.to yield_with_args (mylib)
+  end
+
+  it "each and block" do
+    expect { |block|
+      { a: 1, b: 2 }.each(&block)
+    }.to yield_successive_args([:a, 1], [:b, 2])
+  end
+
 end   
