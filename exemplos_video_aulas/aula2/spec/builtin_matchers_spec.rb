@@ -85,4 +85,31 @@ describe "Matchers" do
     }.to yield_successive_args([:a, 1], [:b, 2])
   end
 
+  it "changes" do 
+    numbers = [1, 2, 3]
+
+    expect {
+      numbers << 4
+    }.to change(numbers, :size).by(1)
+
+    expect{
+      numbers << 5
+    }.to change { numbers.size }.by(1)
+
+    expect{
+      numbers << 6
+    }.to change { numbers.last }.from(5).to(6)
+
+    expect{
+      numbers.shift
+    }.to change(numbers, :size).by(-1)
+
+    expect {
+
+    }.not_to change { numbers.size }
+  end
+
+
+
+
 end   
