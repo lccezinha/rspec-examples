@@ -1,9 +1,12 @@
 Just to learn about RSpec. Get out !
 
-### NOTES:
+#### NOTES:
 
-* subject(:lol) => is the 'subject' that will be tested.
-> (RELOAD IN EACH TEST)
+##### subject
+
+    subject(:lol)
+
+> Is the subject that will be tested. Reloaded in each test.
 
 Instead this:
 
@@ -15,11 +18,18 @@ You can use:
     subject(:foo) { Foo.new }
     expect(foo).to be_true
 
-* let(:lol) => used to define some dependencies of the test. If you will test a controller and need a User for example, you can do this:
-> (NOT RELOAD IN EACH TEST. If some test modify this value, this modification will be used in the others tests.) 
+##### let
 
-    let(:user) { "user" }
+    let(:lol) { 'lol' }
 
-* mock: 
+> used to define some dependencies of the test. If you will test a controller and need a User for example. <br >
+Not reloaded is each test, If some test modify this value, this modification will be used in the others tests
 
-* stub:
+
+##### mock
+
+> Used when you need to fake some object in test
+
+#####stub
+
+> Used when you need to simulate some method in a mock object
