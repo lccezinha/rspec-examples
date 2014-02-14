@@ -45,3 +45,36 @@ Not reloaded is each test, If some test modify this value, this modification wil
     product = mock(:product)
     product.stub :value => 1.00
     expect(product.value).to eql(1.0)
+
+#Matchers
+
+    expect(actual).to eql(1)
+    expect(actual).not_to eql(1)
+
+##### Matchers truthy and falsy
+
+    expect(obj).to be_true
+    expect(obj).to be_false
+    expect(obj).to be_empty
+    expect(obj).not_to be_empty
+    expect(obj).to be
+
+##### Equality Matchers
+
+```ruby
+# If 'a' and 'b' object are the same object
+    a.equal?(b)
+
+# If 'a' and 'b' have the same value
+    a.eql?(b)
+
+# If 'a' and 'b' have the same value with value convesion
+    a == b
+```
+
+> matchers:
+
+    expect(a).to equal(b) => a.equal?(b)
+    expect(a).to be(b)    => a.equal?(b)
+    expect(a).to eql(b)   => a.eql?(b)
+    expect(a).to eq(b)    => a == b
