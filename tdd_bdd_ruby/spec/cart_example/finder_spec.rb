@@ -16,7 +16,6 @@ describe 'Finder' do
     finder = Finder.new
     finder.find cart
 
-
     expect(finder.low.name).to eq('meat')
     expect(finder.high.name).to eq('milk')
   end
@@ -28,7 +27,6 @@ describe 'Finder' do
 
     finder = Finder.new
     finder.find cart
-
 
     expect(finder.low.name).to eq('milk')
     expect(finder.high.name).to eq('milk')
