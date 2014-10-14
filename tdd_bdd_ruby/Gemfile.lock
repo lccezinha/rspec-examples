@@ -20,3 +20,4 @@ PLATFORMS
 
 DEPENDENCIES
   rspec
+  rspec-mocks
