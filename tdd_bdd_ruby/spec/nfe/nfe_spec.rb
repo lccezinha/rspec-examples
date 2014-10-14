@@ -10,12 +10,12 @@ describe NfeGenerator do
 
   it 'generate with discount %6' do
     nfe_dao = double('nfe_dao')
-    nfe_dao.stub(:save)
+    nfe_dao.stub(:execute)
 
     sap = double('sap')
-    sap.stub(:send)
+    sap.stub(:execute)
 
-    nfe_generator = NfeGenerator.new nfe_dao, sap
+    nfe_generator = NfeGenerator.new [nfe_dao, sap]
     order         = Order.new 'Luiz', 1000, 1
 
     nf = nfe_generator.generate order

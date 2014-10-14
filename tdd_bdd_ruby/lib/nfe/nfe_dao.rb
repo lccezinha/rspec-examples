@@ -1,4 +1,4 @@
 class NFeDao
-  def save(nfe)
+  def execute(nfe)
   end
 end

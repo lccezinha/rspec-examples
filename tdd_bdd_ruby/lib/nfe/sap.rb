@@ -1,4 +1,4 @@
 class Sap
-  def send(nfe)
+  def execute(nfe)
   end
 end
